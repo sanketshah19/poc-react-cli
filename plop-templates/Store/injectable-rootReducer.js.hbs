@@ -1,0 +1,11 @@
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
+import history from '../store/history';
+/* INJECT_IMPORT_REDUCER */
+
+const rootReducer = combineReducers({
+  router: connectRouter(history),
+  /* INJECT_REDUCER */
+});
+
+export default rootReducer

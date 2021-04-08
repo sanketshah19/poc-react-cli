@@ -1,0 +1,33 @@
+/**
+ *
+ * {{properCase ContainerName }}
+ *
+ */
+
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class {{pascalCase ContainerName}} extends Component {
+  state = {}
+
+  render() {
+    return (
+      <div className="{{pascalCase ContainerName}}" />
+    );
+  }
+}
+
+{{pascalCase ContainerName}}.defaultProps = {
+
+};
+
+{{pascalCase ContainerName}}.propTypes = {
+
+};
+
+function mapStateToProps(state, ownProps) {
+  return {};
+}
+
+export default connect(mapStateToProps)({{pascalCase ContainerName}});

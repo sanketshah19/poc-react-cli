@@ -1,0 +1,47 @@
+import types from '../../constants/types/{{pascalCase name}}.js';
+
+const {
+  {{constantCase name}}_REQUEST,
+  {{constantCase name}}_SUCCESS,
+  {{constantCase name}}_FAILURE,
+  {{constantCase name}}_RESET,
+} = types;
+
+const INITIAL_STATE = {
+  data: [],
+  error: "",
+  loading: false,
+  message: "",
+};
+
+export default function (state = INITIAL_STATE, action) {
+  const { type, payload } = action;
+
+  switch (type) {
+    case {{constantCase name}}_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: "",
+        message: ""
+      };
+    case {{constantCase name}}_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: "",
+        data: payload.data,
+      };
+    case {{constantCase name}}_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: payload,
+        message: payload.message,
+      };
+    case {{constantCase name}}_RESET:
+      return INITIAL_STATE;
+    default:
+      return state;
+  }
+}

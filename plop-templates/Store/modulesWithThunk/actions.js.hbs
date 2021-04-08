@@ -1,0 +1,13 @@
+import types from '../../constants/types/{{pascalCase name}}.js';
+
+const {
+  {{constantCase name}}_REQUEST,
+  {{constantCase name}}_SUCCESS,
+  {{constantCase name}}_FAILURE,
+  {{constantCase name}}_RESET,
+} = types;
+
+export const {{camelCase name}}Success = (payload) => ({type: {{constantCase name}}_SUCCESS, payload});
+export const {{camelCase name}}Failure = (payload) => ({type: {{constantCase name}}_FAILURE, payload});
+export const {{camelCase name}}Request = (payload) => ({type: {{constantCase name}}_REQUEST, payload});
+export const {{camelCase name}}Reset = (payload) => ({type: {{constantCase name}}_RESET, payload});

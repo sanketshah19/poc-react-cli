@@ -1,0 +1,23 @@
+/**
+ *
+ * {{properCase ContainerName }}
+ *
+ */
+
+{{#if wantMemo}}
+import React, { memo } from 'react';
+{{else}}
+import React from 'react';
+{{/if}}
+
+const {{pascalCase ContainerName}} = () => {
+  return (
+    <div className="{{pascalCase ContainerName}}" />
+  );
+};
+
+{{#if wantMemo}}
+export default memo({{ properCase ContainerName }});
+{{else}}
+export default {{ properCase ContainerName }};
+{{/if}}

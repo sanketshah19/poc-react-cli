@@ -1,0 +1,45 @@
+/**
+ *
+ * {{properCase ContainerName }}
+ *
+ */
+
+{{#if wantMemo}}
+import React, { memo } from 'react';
+{{else}}
+import React from 'react';
+{{/if}}
+import { connect } from 'react-redux';
+{{#if wantMemo}}
+import { compose } from 'redux';
+{{/if}}
+
+const {{pascalCase ContainerName}} = () => {
+  return (
+    <div className="{{pascalCase ContainerName}}" />
+  );
+};
+
+
+{{pascalCase ContainerName}}.defaultProps = {
+
+};
+
+{{pascalCase ContainerName}}.propTypes = {
+
+};
+
+function mapStateToProps(state, ownProps) {
+  return {};
+}
+
+{{#if wantMemo}}
+const withConnect = connect(mapStateToProps);
+
+export default compose(
+  withConnect,
+  memo,
+)({{ properCase ContainerName }});
+{{else}}
+export default connect(mapStateToProps)({{pascalCase ContainerName}});
+{{/if}}

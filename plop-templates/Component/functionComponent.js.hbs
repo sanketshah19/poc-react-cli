@@ -1,0 +1,32 @@
+{{#if wantMemo}}
+import React, { memo, useState, useEffect } from 'react';
+{{else}}
+import React, { useState, useEffect }  from 'react';
+{{/if}}
+import PropTypes from 'prop-types';
+import styles from './{{pascalCase ComponentName}}.module.css';
+
+const {{pascalCase ComponentName}} = props => {
+
+  const [state, setState] = useState()
+
+  return (
+    <div className={styles.root}>
+
+    </div>
+  );
+};
+
+{{pascalCase ComponentName}}.defaultProps = {
+
+};
+
+{{pascalCase ComponentName}}.propTypes = {
+
+};
+
+{{#if wantMemo}}
+export default memo({{ properCase ComponentName }});
+{{else}}
+export default {{ properCase ComponentName }};
+{{/if}}
